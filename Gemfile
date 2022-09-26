@@ -15,6 +15,7 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 gem "bootsnap", require: false
 gem "sidekiq", "~> 6.5"
+gem "devise", "~> 4.8"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
