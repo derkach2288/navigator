@@ -11,10 +11,19 @@
   </head>
 
   <body>
+    <!--devise-->
+      <% if user_signed_in? %>
+        <%= button_to "Вихід", destroy_user_session_path, method: :delete %>
+        <%= link_to "Редагувати", edit_user_registration_path %>
+      <% else %>
+          <%= link_to "Вхід", user_session_path %>
+          <%= link_to "Реєстрація", new_user_registration_path %>
+      <% end %>
+    <!--devise-->
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
+
     <%= yield %>
   </body>
 </html>
