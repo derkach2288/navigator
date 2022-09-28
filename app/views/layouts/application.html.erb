@@ -11,19 +11,60 @@
   </head>
 
   <body>
-    <!--devise-->
-      <% if user_signed_in? %>
-        <%= button_to "Вихід", destroy_user_session_path, method: :delete %>
-        <%= link_to "Редагувати", edit_user_registration_path %>
-      <% else %>
-          <%= link_to "Вхід", user_session_path %>
-          <%= link_to "Реєстрація", new_user_registration_path %>
-      <% end %>
-    <!--devise-->
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<div class="min-h-full">
+  <nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center">
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 
-    <%= yield %>
+              <% if user_signed_in? %>
+                <%= button_to "Вихід", destroy_user_session_path, method: :delete, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+                <%= link_to "Редагувати", edit_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+              <% else %>
+                <%= link_to "Вхід", user_session_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+                <%= link_to "Реєстрація", new_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="md:hidden" id="mobile-menu">
+      <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <% if user_signed_in? %>
+                <%= button_to "Вихід", destroy_user_session_path, method: :delete, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" %>
+                <%= link_to "Редагувати", edit_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" %>
+              <% else %>
+                <%= link_to "Вхід", user_session_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" %>
+                <%= link_to "Реєстрація", new_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" %>
+              <% end %>
+
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-white shadow">
+    <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Navigator</h1>
+    </div>
+  </header>
+  <main>
+    <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+       <%= yield %>
+  </main>
+</div>
+
+
   </body>
 </html>
