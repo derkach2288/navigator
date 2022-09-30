@@ -25,8 +25,8 @@
                 <%= button_to "Вихід", destroy_user_session_path, method: :delete, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
                 <%= link_to "Редагувати", edit_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
               <% else %>
-                <%= link_to "Вхід", user_session_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
-                <%= link_to "Реєстрація", new_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+                <%= link_to "Sign in", user_session_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+                <%= link_to "Sign up", new_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
               <% end %>
 
             </div>
