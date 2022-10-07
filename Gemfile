@@ -15,6 +15,8 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 gem "bootsnap", require: false
 gem "sidekiq", "~> 6.5"
+gem "devise", "~> 4.8"
+gem 'devise_invitable', '~> 2.0.0'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -22,6 +24,7 @@ end
 
 group :development do
   gem "web-console"
+  gem "rack-mini-profiler"
 end
 
 group :test do
