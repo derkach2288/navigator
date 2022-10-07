@@ -4,7 +4,7 @@
 
 Клонуйте це сховище будь-де, де вам потрібно, і перемістіть його в каталог:
 
-git clone --branch=devise_controller https://github.com/derkach2288/navigator.git navigator cd navigator
+git clone https://github.com/derkach2288/navigator.git navigator cd navigator
 
 Скопіюйте приклад файлу .env, оскільки справжній git ігнорує:
 cp .env.example .env
