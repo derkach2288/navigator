@@ -4,7 +4,7 @@
 
 Клонуйте це сховище будь-де, де вам потрібно, і перемістіть його в каталог:
 
-git clone --branch=docker https://github.com/derkach2288/navigator.git navigator cd navigator
+git clone --branch=docker_сщтекщддук https://github.com/derkach2288/navigator.git navigator cd navigator
 
 Скопіюйте приклад файлу .env, оскільки справжній git ігнорує:
 cp .env.example .env
