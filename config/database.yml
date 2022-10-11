@@ -1,45 +1,45 @@
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   username: user_navigator
-#   password: 1234
-#   host: localhost
-#   port: 5432
-
-# development:
-#   <<: *default
-#   database: navigator_development
-
- 
-# production:
-#   <<: *default
-#   database: navigator_production
-#   username: navigator
-#   password: <%= ENV["NAVIGATOR_DATABASE_PASSWORD"] %>
-
-
-
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: "<%= ENV.fetch("POSTGRES_DB") { "navigator" } %>"
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: "<%= ENV.fetch("POSTGRES_USER") { "user_navigator" } %>"
-  password: "<%= ENV.fetch("POSTGRES_PASSWORD") { "1234" } %>"
-  host: "<%= ENV.fetch("POSTGRES_HOST") { "postgres" } %>"
-  port: "<%= ENV.fetch("POSTGRES_PORT") { 5432 } %>"
-  
+  username: user_navigator
+  password: 1234
+  host: localhost
+  port: 5432
 
 development:
   <<: *default
-  database: <%= ENV.fetch("POSTGRES_DB") { "navigator" } %>_development
+  database: navigator_development
 
-
-test:
-  <<: *default
-  database: <%= ENV.fetch("POSTGRES_DB") { "navigator" } %>_test
-
+ 
 production:
   <<: *default
-  database: <%= ENV.fetch("POSTGRES_DB") { "navigator" } %>_production
+  database: navigator_production
+  username: navigator
+  password: <%= ENV["NAVIGATOR_DATABASE_PASSWORD"] %>
+
+
+
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   database: "<%= ENV.fetch("POSTGRES_DB") { "navigator" } %>"
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   username: "<%= ENV.fetch("POSTGRES_USER") { "user_navigator" } %>"
+#   password: "<%= ENV.fetch("POSTGRES_PASSWORD") { "1234" } %>"
+#   host: "<%= ENV.fetch("POSTGRES_HOST") { "postgres" } %>"
+#   port: "<%= ENV.fetch("POSTGRES_PORT") { 5432 } %>"
+  
+
+# development:
+#   <<: *default
+#   database: <%= ENV.fetch("POSTGRES_DB") { "navigator" } %>_development
+
+
+# test:
+#   <<: *default
+#   database: <%= ENV.fetch("POSTGRES_DB") { "navigator" } %>_test
+
+# production:
+#   <<: *default
+#   database: <%= ENV.fetch("POSTGRES_DB") { "navigator" } %>_production
