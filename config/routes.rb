@@ -3,7 +3,7 @@ Rails.application.routes.draw do
         resources :users, only: [:index]
     end
 
-    devise_for :users, :controllers => {:registrations => "registrations"}
+    devise_for :users, :controllers => {:registrations => "registrations", invitations: 'invitations'}
     root to: "pages#index"
     resources :pages
   
