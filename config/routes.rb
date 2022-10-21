@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-    devise_for :users, :controllers => {:registrations => "registrations"}
+    namespace :admin do
+        resources :users, only: [:index]
+    end
+
+    devise_for :users, :controllers => {:registrations => "registrations", invitations: 'invitations'}
     root to: "pages#index"
     resources :pages
   
