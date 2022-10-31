@@ -17,6 +17,7 @@ gem "bootsnap", require: false
 gem "sidekiq", "~> 6.5"
 gem "devise", "~> 4.8"
 gem 'devise_invitable', '~> 2.0.0'
+gem "pundit", "~> 2.2"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
