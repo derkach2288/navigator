@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
 
     def index
         
-        @users = User.all
+        @users = User.where(invitation_token: nil)
         authorize @users
     end
 end
