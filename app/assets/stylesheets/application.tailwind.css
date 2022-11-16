@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities"; */
+.first{
+    @apply p-2 whitespace-nowrap font-semibold text-left;
+}
