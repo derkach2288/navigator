@@ -10,9 +10,9 @@
                     <table class="users table-auto w-full">
                         <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                             <tr>
-                                <th class="firsthead">ID</th>
-                                <th class="firsthead">Email</th>
-                                <th class="firsthead">Role</th>
+                                <th>ID</th>
+                                <th>Email</th>
+                                <th>Role</th>
                             </tr>
                         </thead>
 
@@ -20,9 +20,9 @@
                       <% @pending_users.each do |user| %>
                         <tbody class="text-sm divide-y divide-gray-100">
                             <tr>
-                                <td class="p-2 whitespace-nowrap font-medium text-gray-800"><%= user.id %></td>
-                                <td class="p-2 whitespace-nowrap text-left"><%= user.email %></td>
-                                <td class="p-2 whitespace-nowrap text-left font-medium text-green-500""><%= user.role %></td>
+                                <td class="font-medium text-gray-800"><%= user.id %></td>
+                                <td class="text-left"><%= user.email %></td>
+                                <td class="text-left font-medium text-green-500""><%= user.role %></td>
                             </tr>
                         </tbody>
                       <% end %>
