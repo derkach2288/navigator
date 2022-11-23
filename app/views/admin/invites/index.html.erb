@@ -16,16 +16,15 @@
                   </tr>
                 </thead>
 
-
-                <% @pending_users.each do |user| %>
                 <tbody class="text-sm divide-y divide-gray-100">
-                  <tr>
-                    <td class="font-medium text-gray-800"><%= user.id %></td>
-                    <td class="text-left"><%= user.email %></td>
-                    <td class="text-left font-medium text-green-500"><%= user.role %></div></td>
-                  </tr>
+                  <% @pending_users.each do |user| %>
+                    <tr>
+                      <td class="font-medium text-gray-800"><%= user.id %></td>
+                      <td class="text-left"><%= user.email %></td>
+                      <td class="text-left font-medium text-green-500"><%= user.role %></div></td>
+                    </tr>
+                  <% end %>
                 </tbody>
-                <% end %>
               </table>
             </div>
           </div>
