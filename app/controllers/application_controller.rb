@@ -11,10 +11,10 @@ class ApplicationController < ActionController::Base
     redirect_back(fallback_location: root_path)
   end
 
-  def authenticate_inviter!
-    unless current_user.role=="admin"
-      redirect_to root_url, :alert => "Access Denied"
-    end
-    super
-  end
+  # def authenticate_inviter!
+  #   unless current_user.role=="admin"
+  #     redirect_to root_url, :alert => "Access Denied"
+  #   end
+  #   super
+  # end
 end
