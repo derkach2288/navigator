@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Companis</h1>
+
+<div id="companis">
+  <% @companis.each do |compani| %>
+    <%= render compani %>
+    <p>
+      <%= link_to "Show this compani", [:admin, compani] %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New compani", new_admin_compani_path %>

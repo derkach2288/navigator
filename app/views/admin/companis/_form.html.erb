@@ -1,0 +1,17 @@
+<%= form_with(model: [:admin, compani]) do |form| %>
+  <% if compani.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(compani.errors.count, "error") %> prohibited this compani from being saved:</h2>
+
+      <ul>
+        <% compani.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
