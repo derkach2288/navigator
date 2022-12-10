@@ -23,20 +23,23 @@
 
               <% if user_signed_in? %>
                 <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
-                <%= link_to "Edit User", edit_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
-                <%= link_to "Invite User", new_user_invitation_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
                 <%= link_to "Company", admin_companis_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
-
+                <%# <%= link_to "Edit User", edit_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
                   
+                  <%# <% if current_user.admin? %>
                   <% if policy([:user]).index? %>
                     <%= link_to "Users", admin_users_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
                     <%= link_to "Pending Users", admin_invites_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
-
                   <% end %>
+
+                  <% if policy([:user]).new? %>
+                    <%= link_to "Invite User", new_user_invitation_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+                  <% end %>
+
 
               <% else %>
                 <%= link_to "Sign in", user_session_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
-                <%= link_to "Sign up", new_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+                <%# <%= link_to "Sign up", new_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
               <% end %>
 
             </div>
@@ -51,10 +54,10 @@
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <% if user_signed_in? %>
                 <%= button_to "Вихід", destroy_user_session_path, method: :delete, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" %>
-                <%= link_to "Редагувати", edit_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" %>
+                <%# <%= link_to "Редагувати", edit_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" %> 
               <% else %>
                 <%= link_to "Вхід", user_session_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" %>
-                <%= link_to "Реєстрація", new_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" %>
+                <%# <%= link_to "Реєстрація", new_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" %>
               <% end %>
 
       </div>
