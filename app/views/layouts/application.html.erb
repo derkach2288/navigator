@@ -23,7 +23,7 @@
 
               <% if user_signed_in? %>
                 <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
-                <%= link_to "Edit User", edit_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+                <%# <%= link_to "Edit User", edit_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
                   
                   <%# <% if current_user.admin? %>
                   <% if policy([:user]).index? %>
