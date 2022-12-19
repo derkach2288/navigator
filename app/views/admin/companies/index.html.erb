@@ -6,8 +6,8 @@
       <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
         <header class="px-5 py-4 border-b border-gray-100">
           <div class="flex justify-between ">
-            <h2 class="font-semibold text-gray-800">Companis:</h2>
-            <%= link_to "New compani", new_admin_compani_path, class: "group relative  justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+            <h2 class="font-semibold text-gray-800">Companies:</h2>
+            <%= link_to "New company", new_admin_company_path, class: "group relative  justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
           </div>
         </header>
           <div class="p-3">
@@ -22,14 +22,14 @@
                 </thead>
 
                 <tbody class="text-sm divide-y divide-gray-100">
-                  <% @companis.each do |compani| %>
+                  <% @companies.each do |company| %>
                     <tr>
-                      <td class="p-2 whitespace-nowrap font-medium text-gray-800"><%= compani.id %></td>
-                      <td class="p-2 whitespace-nowrap text-left"><%= compani.companiname %></td>
+                      <td class="p-2 whitespace-nowrap font-medium text-gray-800"><%= company.id %></td>
+                      <td class="p-2 whitespace-nowrap text-left"><%= company.companiname %></td>
                       <td class="p-2 whitespace-nowrap text-lg text-center">
                         <div class="flex justify-center">
-                          <%= link_to "Edit", edit_admin_compani_path(compani), class: "group relative  justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %> |
-                          <%= button_to "Destroy", [:admin, compani], method: :delete, class: "group relative  justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+                          <%= link_to "Edit", edit_admin_company_path(company), class: "group relative  justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %> |
+                          <%= button_to "Destroy", [:admin, company], method: :delete, class: "group relative  justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
                         </div>
                       </td>
                     </tr>

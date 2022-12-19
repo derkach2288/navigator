@@ -1,2 +1,0 @@
-class Compani < ApplicationRecord
-end
