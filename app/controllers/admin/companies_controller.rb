@@ -3,13 +3,16 @@ class Admin::CompaniesController < ApplicationController
 
   def index
     @companies = Company.all
+    authorize @companies
   end
 
   def new
     @company = Company.new
+    authorize @company
   end
 
   def edit
+    authorize @company
   end
 
   def create
@@ -31,7 +34,9 @@ class Admin::CompaniesController < ApplicationController
   end
 
   def destroy
+    authorize @company
     @company.destroy
+    
 
       redirect_to admin_companies_url, notice: "Compani was successfully destroyed."
   end
