@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   # has_many :models
+  belongs_to :company
   enum role: {user: 0, publisher: 1, admin: 2}
   after_initialize :set_default_role, :if => :new_record?
 
