@@ -38,7 +38,7 @@ class Admin::CompaniesController < ApplicationController
     @company.destroy
     
 
-      redirect_to admin_companies_url, notice: "Compani was successfully destroyed."
+      redirect_to admin_companies_url, notice: "Company was successfully destroyed."
   end
 
   private
