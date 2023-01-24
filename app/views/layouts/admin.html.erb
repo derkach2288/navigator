@@ -38,6 +38,8 @@
                   <% if policy([:company]).index? %>
                     <%= link_to "Companies", admin_companies_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
                   <% end %>
+               <%= link_to "User panel", root_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+
 
 
               <% else %>

@@ -1,4 +1,4 @@
-class Admin::InvitesController < ApplicationController
+class Admin::InvitesController < Admin::AdminController
     
     before_action :authenticate_user!
 
