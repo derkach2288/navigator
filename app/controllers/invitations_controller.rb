@@ -2,7 +2,7 @@ class InvitationsController < Devise::InvitationsController
     before_action :configure_permitted_parameters
     before_action :authenticate_user!
     
- layout :choose_layout
+ layout :set_layout
 
 
     def new
@@ -17,7 +17,7 @@ class InvitationsController < Devise::InvitationsController
     devise_parameter_sanitizer.permit(:accept_invitation, keys: [:first_name, :last_name, :company_id])
   end
 
-  def choose_layout
+  def set_layout
     if current_user.nil?
       'application'
     elsif current_user.admin?
