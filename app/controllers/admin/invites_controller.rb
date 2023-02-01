@@ -1,6 +1,5 @@
-class Admin::InvitesController < ApplicationController
+class Admin::InvitesController < Admin::ApplicationController
     
-    before_action :authenticate_user!
 
     def index
         @pending_users = User.where.not(invitation_token: nil)

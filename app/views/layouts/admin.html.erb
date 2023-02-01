@@ -13,7 +13,7 @@
   <body>
 
 <div class="min-h-full">
-  <nav class="bg-gray-800">
+  <nav class="bg-green-500">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
@@ -24,9 +24,22 @@
               <% if user_signed_in? %>
                 <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
                 <%# <%= link_to "Edit User", edit_user_registration_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
-                <% if policy([:user]).index? %>
-                  <%= link_to "Admin panel", admin_users_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
-                <% end %>
+                  
+                  <%# <% if current_user.admin? %>
+                  <% if policy([:user]).index? %>
+                    <%= link_to "Users", admin_users_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+                    <%= link_to "Pending Users", admin_invites_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+                  <% end %>
+
+                  <% if policy([:user]).new? %>
+                    <%= link_to "Invite User", admin_invitation_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+                  <% end %>
+
+                  <% if policy([:company]).index? %>
+                    <%= link_to "Companies", admin_companies_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+                  <% end %>
+               <%= link_to "User panel", root_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
+
 
 
               <% else %>

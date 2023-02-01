@@ -1,9 +1,21 @@
 class ApplicationController < ActionController::Base
     include Pundit::Authorization
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-   
- 
 
+
+    # layout :choose_layout
+
+    # protected
+    #   def choose_layout
+    #     if current_user.nil?
+    #       'application'
+    #     elsif current_user.admin?
+    #         'admin'
+    #     else
+    #       'application'
+    #     end
+    #   end
+ 
   private
 
   def user_not_authorized
