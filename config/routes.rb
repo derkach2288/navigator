@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
     namespace :admin do
         devise_scope :user do
             get 'invitation', to: 'invitations#new'
